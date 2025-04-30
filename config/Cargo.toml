@@ -1,9 +1,0 @@
-[package]
-name = "config"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-dotenvy = "*"
-dotenvy_macro = "*"
-lazy_static = "1.5.0"

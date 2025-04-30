@@ -3,8 +3,11 @@ name = "server"
 version = "0.1.0"
 edition = "2024"
 
+[build-dependencies]
+dotenvy = { workspace = true }
+
 [dependencies]
-config = { path = "../config" }
+anyhow = { workspace = true }
 models = { path = "../models" }
 tokio = { workspace = true }
 warp = "0.3.7"

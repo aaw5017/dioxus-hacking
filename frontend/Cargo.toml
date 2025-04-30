@@ -6,9 +6,11 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[build-dependencies]
+dotenvy = { workspace = true }
+
 [dependencies]
 anyhow = { workspace = true }
-config = { path = "../config" }
 dioxus = { version = "0.6.0", features = ["router"] }
 models = { path = "../models" }
 reqwest = { version = "0.12.15", features = ["json"] }

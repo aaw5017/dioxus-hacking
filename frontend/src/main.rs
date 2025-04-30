@@ -3,6 +3,8 @@ use dioxus::prelude::*;
 use models::PingResponse;
 use reqwest;
 
+const SERVER_BASE_URI: &str = env!("SERVER_BASE_URI");
+
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
@@ -43,8 +45,7 @@ fn App() -> Element {
 }
 
 async fn do_ping() -> Result<String> {
-    let config = config::get();
-    let request_path = format!("{}/api/v1/ping", config.server_base_uri);
+    let request_path = format!("{}/api/v1/ping", SERVER_BASE_URI);
     let response = reqwest::get(request_path)
         .await?
         .json::<PingResponse>()
