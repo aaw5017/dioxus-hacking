@@ -1,15 +1,9 @@
 use anyhow::Result;
 use dioxus::prelude::*;
-use futures_util::StreamExt;
-use lazy_static::lazy_static;
 use models::PingResponse;
 use reqwest;
 
-static SERVER_BASE_URI: GlobalSignal<String> = Signal::global(|| {
-    let _ = dotenvy::dotenv();
-    let base_uri = std::env::var("SERVER_BASE_URI").expect("SERVER_BASE_URI not found in ENV!");
-    base_uri
-});
+const SERVER_BASE_URI: &str = env!("SERVER_BASE_URI");
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]

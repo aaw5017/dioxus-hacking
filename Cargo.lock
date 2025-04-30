@@ -1531,8 +1531,6 @@ dependencies = [
  "anyhow",
  "dioxus",
  "dotenvy",
- "futures-util",
- "lazy_static",
  "models",
  "reqwest",
 ]
