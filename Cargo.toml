@@ -1,11 +1,12 @@
 [workspace]
 resolver = "2"
-members = ["config", "frontend", "models", "server"]
+members = ["frontend", "models", "server"]
 
 [workspace.dependencies]
 anyhow = "*"
+dotenvy = "*"
 serde = { version = "1.0.219", features = ["derive"] }
-tokio = { version = "1.44.2", default-features = false, features = ["macros", "rt-multi-thread"] }
+tokio = { version = "1.44.2", default-features = false, features = ["macros", "rt-multi-thread", "signal", "sync"] }
 
 [profile]
 

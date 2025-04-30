@@ -1,7 +1,15 @@
 use anyhow::Result;
 use dioxus::prelude::*;
+use futures_util::StreamExt;
+use lazy_static::lazy_static;
 use models::PingResponse;
 use reqwest;
+
+static SERVER_BASE_URI: GlobalSignal<String> = Signal::global(|| {
+    let _ = dotenvy::dotenv();
+    let base_uri = std::env::var("SERVER_BASE_URI").expect("SERVER_BASE_URI not found in ENV!");
+    base_uri
+});
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
@@ -43,8 +51,7 @@ fn App() -> Element {
 }
 
 async fn do_ping() -> Result<String> {
-    let config = config::get();
-    let request_path = format!("{}/api/v1/ping", config.server_base_uri);
+    let request_path = format!("{}/api/v1/ping", SERVER_BASE_URI);
     let response = reqwest::get(request_path)
         .await?
         .json::<PingResponse>()

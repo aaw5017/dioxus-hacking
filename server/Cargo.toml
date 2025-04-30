@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-config = { path = "../config" }
+anyhow = { workspace = true }
+dotenvy = { workspace = true }
 models = { path = "../models" }
 tokio = { workspace = true }
 warp = "0.3.7"

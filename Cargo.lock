@@ -483,15 +483,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "config"
-version = "0.1.0"
-dependencies = [
- "dotenvy",
- "dotenvy_macro",
- "lazy_static",
-]
-
-[[package]]
 name = "console_error_panic_hook"
 version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1311,18 +1302,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1aaf95b3e5c8f23aa320147307562d361db0ae0d51242340f558153b4eb2439b"
 
 [[package]]
-name = "dotenvy_macro"
-version = "0.15.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cb0235d912a8c749f4e0c9f18ca253b4c28cfefc1d2518096016d6e3230b6424"
-dependencies = [
- "dotenvy",
- "proc-macro2",
- "quote",
- "syn 1.0.109",
-]
-
-[[package]]
 name = "dpi"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1550,8 +1529,10 @@ name = "frontend"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "config",
  "dioxus",
+ "dotenvy",
+ "futures-util",
+ "lazy_static",
  "models",
  "reqwest",
 ]
@@ -4143,7 +4124,8 @@ dependencies = [
 name = "server"
 version = "0.1.0"
 dependencies = [
- "config",
+ "anyhow",
+ "dotenvy",
  "models",
  "tokio",
  "warp",
