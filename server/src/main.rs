@@ -22,7 +22,7 @@ async fn main() -> () {
                 warp::serve(routes).run(([127, 0, 0, 1], port)).await;
             }
             Err(_) => {
-                println!("Unable to parse SERVER_PORT to u16");
+                eprintln!("Unable to parse SERVER_PORT to u16");
                 let _ = shutdown_send.send(true);
             }
         }

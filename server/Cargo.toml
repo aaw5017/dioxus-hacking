@@ -8,6 +8,7 @@ dotenvy = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
+database = { path = "../database" }
 models = { path = "../models" }
 tokio = { workspace = true }
 warp = "0.3.7"

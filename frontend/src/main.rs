@@ -4,6 +4,8 @@ use models::PingResponse;
 use reqwest;
 
 const SERVER_BASE_URI: &str = env!("SERVER_BASE_URI");
+const FAVICON: Asset = asset!("/assets/favicon.ico");
+const MAIN_CSS: Asset = asset!("/assets/main.css");
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
@@ -12,9 +14,6 @@ enum Route {
     #[route("/")]
     Home {},
 }
-
-const FAVICON: Asset = asset!("/assets/favicon.ico");
-const MAIN_CSS: Asset = asset!("/assets/main.css");
 
 fn main() {
     dioxus::launch(App);
