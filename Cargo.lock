@@ -531,6 +531,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "config"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+]
+
+[[package]]
 name = "console_error_panic_hook"
 version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -755,6 +763,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "argon2",
+ "config",
 ]
 
 [[package]]

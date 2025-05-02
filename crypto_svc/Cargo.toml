@@ -6,3 +6,4 @@ edition = "2024"
 [dependencies]
 anyhow = { workspace = true }
 argon2 = { version = "0.5.3", features = ["std"] }
+config = { path = "../config" }
