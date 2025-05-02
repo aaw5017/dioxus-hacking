@@ -1,0 +1,8 @@
+[package]
+name = "crypto_svc"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = { workspace = true }
+argon2 = { version = "0.5.3", features = ["std"] }

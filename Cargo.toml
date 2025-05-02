@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = [ "database","frontend", "models", "server"]
+members = [ "crypto_svc", "database","frontend", "models", "server"]
 
 [workspace.dependencies]
 anyhow = "*"

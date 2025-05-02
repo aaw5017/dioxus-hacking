@@ -8,6 +8,7 @@ const SERVER_PORT: &str = env!("SERVER_PORT");
 
 #[tokio::main]
 async fn main() -> () {
+    let _ = crypto_svc::hash_it("test");
     let (shutdown_send, mut shutdown_recv) = mpsc::unbounded_channel::<bool>();
 
     tokio::spawn(async move {
