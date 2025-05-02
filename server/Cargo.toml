@@ -8,6 +8,7 @@ dotenvy = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
+crypto_svc = { path = "../crypto_svc" }
 database = { path = "../database" }
 models = { path = "../models" }
 tokio = { workspace = true }
